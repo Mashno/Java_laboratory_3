@@ -4,6 +4,7 @@
  */
 package com.mycompany.java_laboratory_3;
 
+import java.io.File;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -138,7 +139,7 @@ public class View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        controller.ImportFile(new File("путь/к/файлу.yaml"));
     }//GEN-LAST:event_jButton2ActionPerformed
 
   
