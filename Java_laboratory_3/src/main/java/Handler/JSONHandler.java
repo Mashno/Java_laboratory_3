@@ -16,7 +16,7 @@ public class JSONHandler extends BaseHandler{
         if(request.getName().contains(".json")){
             System.out.println("Читаем JSON");
         } else{
-            super.handle(request);
+            System.out.println("Error");
         }
     }
 }

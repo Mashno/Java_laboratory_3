@@ -5,6 +5,8 @@
 package com.mycompany.java_laboratory_3;
 
 import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -18,6 +20,8 @@ public class View extends javax.swing.JFrame {
     private DefaultTreeModel treeModel;
     private DefaultMutableTreeNode rootNode;
     private Controller controller;
+    private JFileChooser fileChooser;
+    private File selectedFile;
     public View(Controller controller) {
         this.controller = controller;
         initComponents();
@@ -79,6 +83,11 @@ public class View extends javax.swing.JFrame {
         jButton4.setText("ExportJSON");
 
         jButton5.setText("ImportFile");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(MonstersTree);
 
@@ -141,6 +150,35 @@ public class View extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         controller.ImportFile(new File("путь/к/файлу.yaml"));
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        fileChooser = new JFileChooser(new File("C:\\Users\\Владислав\\Desktop\\код на гитхаб\\Java_laboratory_3"));
+    int result = fileChooser.showOpenDialog(null);
+    
+    if (result == JFileChooser.APPROVE_OPTION) {
+        selectedFile = fileChooser.getSelectedFile();  // Сначала получаем файл!
+        String fileName = selectedFile.getName().toLowerCase();  // Затем его имя
+        
+        if (fileName.endsWith(".json") || fileName.endsWith(".yaml") || fileName.endsWith(".yml") || fileName.endsWith(".xml")) {
+            try {
+                controller.ImportFile(selectedFile);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(
+                    null,
+                    "Ошибка при загрузке файла: " + e.getMessage(),
+                    "Ошибка",
+                    JOptionPane.ERROR_MESSAGE
+                ); 
+            }
+        } else {
+            JOptionPane.showMessageDialog(
+                null,"Ошибка: выбранный файл должен быть в формате JSON, YAML или XML.",
+                "Неверный формат файла",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
   
 

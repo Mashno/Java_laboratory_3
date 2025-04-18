@@ -4,10 +4,39 @@
  */
 package Monsters;
 
+import java.util.HashMap;
+
 /**
  *
  * @author Владислав
  */
 public class GroupOfMonsters {
+    private HashMap<String, Monster[]> xml_monsters;
+    private HashMap<String, Monster[]> yaml_monsters;
+    private HashMap<String, Monster[]> json_monsters;
+
+    public HashMap<String, Monster[]> getXml_monsters() {
+        return xml_monsters;
+    }
+
+    public void setXml_monsters(HashMap<String, Monster[]> xml_monsters) {
+        this.xml_monsters = xml_monsters;
+    }
+
+    public HashMap<String, Monster[]> getYaml_monsters() {
+        return yaml_monsters;
+    }
+
+    public void setYaml_monsters(HashMap<String, Monster[]> yaml_monsters) {
+        this.yaml_monsters = yaml_monsters;
+    }
+
+    public HashMap<String, Monster[]> getJson_monsters() {
+        return json_monsters;
+    }
+
+    public void setJson_monsters(HashMap<String, Monster[]> json_monsters) {
+        this.json_monsters = json_monsters;
+    }
     
 }
