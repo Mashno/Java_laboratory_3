@@ -4,7 +4,9 @@
  */
 package Handler;
 
+import Monsters.Monster;
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,9 +22,9 @@ public abstract class BaseHandler implements Handler {
     }
 
     @Override
-    public void handle(File request) {
+    public void handle(File request, ArrayList<Monster> monsterList) {
         if(next != null){
-            next.handle(request);
+            next.handle(request, monsterList);
         }
     }
     

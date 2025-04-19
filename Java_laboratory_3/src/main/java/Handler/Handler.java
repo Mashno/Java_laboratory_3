@@ -4,7 +4,9 @@
  */
 package Handler;
 
+import Monsters.Monster;
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,5 +14,5 @@ import java.io.File;
  */
 public interface Handler {
     public void setNext(Handler h);
-    public void handle(File request);
+    public void handle(File request, ArrayList<Monster> resultList);
 }

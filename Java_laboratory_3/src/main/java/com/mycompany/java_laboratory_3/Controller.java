@@ -6,6 +6,8 @@ package com.mycompany.java_laboratory_3;
 
 import java.io.File;
 import Handler.*;
+import Monsters.Monster;
+import java.util.ArrayList;
 /**
  *
  * @author Владислав
@@ -13,10 +15,12 @@ import Handler.*;
 public class Controller {
     //private GroupOfMonster monsters;
     private ExportingFiles exporterFiles;
+    private ArrayList<Monster> monsterList;
     
     public Controller(){
         new View(this).setVisible(true);
         this.exporterFiles = new ExportingFiles();
+        this.monsterList = new ArrayList<>();
     }
     
     public void ImportFile(File file){
@@ -26,20 +30,21 @@ public class Controller {
         
         xmlHandler.setNext(yamlHandler);
         yamlHandler.setNext(jsonHandler);
-        //в строке ниже будет возврашаться хешмап где ключ - название расширения, значение - список монстров
-        xmlHandler.handle(file);
+
+        xmlHandler.handle(file, monsterList);
+        //получили список - добавили его в группу списков и отчистили
     }
     
-    public void ExportFileXML(File file){
-        exporterFiles.ExportXML();
-    }
-    
-    public void ExportFileYAML(File file){
-        exporterFiles.ExportYAML();
-    }
-    
-    public void ExportFileJSON(File file){
-        exporterFiles.ExportJSON();
-    }
+//    public void ExportFileXML(File file){
+//        exporterFiles.ExportXML();
+//    }
+//    
+//    public void ExportFileYAML(File file){
+//        exporterFiles.ExportYAML();
+//    }
+//    
+//    public void ExportFileJSON(File file){
+//        exporterFiles.ExportJSON();
+//    }
     
 }

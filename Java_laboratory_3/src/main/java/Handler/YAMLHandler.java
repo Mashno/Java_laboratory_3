@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Handler;
-
+import Monsters.Monster;
+import java.io.File;
+import java.util.ArrayList;
 import java.io.File;
 
 /**
@@ -12,11 +14,11 @@ import java.io.File;
  */
 public class YAMLHandler extends BaseHandler{
     @Override
-    public void handle(File request){
+    public void handle(File request, ArrayList<Monster> monsterList){
         if(request.getName().contains(".yaml")){
             System.out.println("Читаем YAML");
         } else{
-            super.handle(request);
+            super.handle(request, monsterList);
         }
     }
 }

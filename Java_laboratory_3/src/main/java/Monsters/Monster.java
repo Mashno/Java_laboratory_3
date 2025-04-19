@@ -9,6 +9,15 @@ package Monsters;
  * @author Владислав
  */
 public class Monster {
+    private String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     private String name;
     private String describtion;
     private int danger;
@@ -136,21 +145,21 @@ public class Monster {
         this.effectiveness = effectiveness;
     }
 
-    public Monster(String name, String describtion, int danger, String[] habitat, String first_mentioned, String vulnerabilities, String[] resistances, double height, int weight, String[] immunities, String active_time, Recipe recipe, int preparation_time, String effectiveness) {
-        this.name = name;
-        this.describtion = describtion;
-        this.danger = danger;
-        this.habitat = habitat;
-        this.first_mentioned = first_mentioned;
-        this.vulnerabilities = vulnerabilities;
-        this.resistances = resistances;
-        this.height = height;
-        this.weight = weight;
-        this.immunities = immunities;
-        this.active_time = active_time;
-        this.recipe = recipe;
-        this.preparation_time = preparation_time;
-        this.effectiveness = effectiveness;
+    public Monster() {
+//        this.name = name;
+//        this.describtion = describtion;
+//        this.danger = danger;
+//        this.habitat = habitat;
+//        this.first_mentioned = first_mentioned;
+//        this.vulnerabilities = vulnerabilities;
+//        this.resistances = resistances;
+//        this.height = height;
+//        this.weight = weight;
+//        this.immunities = immunities;
+//        this.active_time = active_time;
+//        this.recipe = recipe;
+//        this.preparation_time = preparation_time;
+//        this.effectiveness = effectiveness;
     }
     
 }
