@@ -33,6 +33,25 @@ public class Controller {
 
         xmlHandler.handle(file, monsterList);
         //получили список - добавили его в группу списков и отчистили
+        for (int i = 0; i < monsterList.size(); i++) {
+            Monster monster = monsterList.get(i);
+            System.out.println("=== Монстр #" + (i + 1) + " ===");
+            System.out.println("Тип: " + monster.getType());
+        System.out.println("Имя: " + monster.getName());
+        System.out.println("Описание: " + monster.getDescribtion());
+        System.out.println("Уровень опасности: " + monster.getDanger());
+        System.out.println("Среда обитания: " + monster.getHabitat());
+        System.out.println("Первое упоминание: " + monster.getFirst_mentioned());
+        System.out.println("Уязвимости: " + monster.getVulnerabilities());
+        System.out.println("Сопротивления: " + monster.getResistances());
+        System.out.println("Рост: " + monster.getHeight() + " м");
+        System.out.println("Вес: " + monster.getWeight() + " кг");
+        System.out.println("Активен: " + monster.getActive_time());
+        System.out.println("Время подготовки: " + monster.getPreparation_time() + " мин");
+        System.out.println("Эффективность: " + monster.getEffectiveness());
+            System.out.println("=======================");
+            System.out.println();
+        }
     }
     
 //    public void ExportFileXML(File file){

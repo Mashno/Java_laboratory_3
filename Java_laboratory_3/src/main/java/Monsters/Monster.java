@@ -4,6 +4,8 @@
  */
 package Monsters;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Владислав
@@ -21,13 +23,13 @@ public class Monster {
     private String name;
     private String describtion;
     private int danger;
-    private String[] habitat;
+    private String habitat;
     private String first_mentioned;
     private String vulnerabilities;
-    private String[] resistances;
-    private double height;
-    private int weight;
-    private String[] immunities;
+    private String resistances;
+    private String height;
+    private String weight;
+    private ArrayList<String> immunities = new ArrayList<>();;
     private String active_time;
     private Recipe recipe;
     private int preparation_time;
@@ -57,11 +59,11 @@ public class Monster {
         this.danger = danger;
     }
 
-    public String[] getHabitat() {
+    public String getHabitat() {
         return habitat;
     }
 
-    public void setHabitat(String[] habitat) {
+    public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
 
@@ -81,35 +83,35 @@ public class Monster {
         this.vulnerabilities = vulnerabilities;
     }
 
-    public String[] getResistances() {
+    public String getResistances() {
         return resistances;
     }
 
-    public void setResistances(String[] resistances) {
+    public void setResistances(String resistances) {
         this.resistances = resistances;
     }
 
-    public double getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public String[] getImmunities() {
+    public ArrayList<String> getImmunities() {
         return immunities;
     }
 
-    public void setImmunities(String[] immunities) {
+    public void setImmunities(ArrayList<String> immunities) {
         this.immunities = immunities;
     }
 
@@ -146,6 +148,7 @@ public class Monster {
     }
 
     public Monster() {
+        
 //        this.name = name;
 //        this.describtion = describtion;
 //        this.danger = danger;
@@ -162,4 +165,9 @@ public class Monster {
 //        this.effectiveness = effectiveness;
     }
     
+    public void addImmunity(String immunity){
+        if (immunity != null && !immunity.trim().isEmpty() && !immunity.equalsIgnoreCase("null")) {
+            this.immunities.add(immunity);
+        }
+    }
 }

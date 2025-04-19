@@ -4,13 +4,15 @@
  */
 package Monsters;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Владислав
  */
 public class Recipe {
     private String type;
-    private Ingredients[] ingredients;
+    private ArrayList<Ingredients> ingredients = new ArrayList<>();
 
     public String getType() {
         return type;
@@ -20,16 +22,18 @@ public class Recipe {
         this.type = type;
     }
 
-    public Ingredients[] getIngredients() {
+    public ArrayList<Ingredients> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(Ingredients[] ingredients) {
+    public void setIngredients(ArrayList<Ingredients> ingredients) {
         this.ingredients = ingredients;
     }
 
-    public Recipe(String type, Ingredients[] ingredients) {
-        this.type = type;
-        this.ingredients = ingredients;
+    public void addIngredient(Ingredients ingredient){
+        ingredients.add(ingredient);
+    }
+    public Recipe() {
+        
     }
 }

@@ -12,9 +12,8 @@ public class Ingredients {
     private String ingredient_name;
     private int amount_ingredient;
 
-    public Ingredients(String ingredient_name, int amount_ingredient) {
-        this.ingredient_name = ingredient_name;
-        this.amount_ingredient = amount_ingredient;
+    public Ingredients() {
+        
     }
 
     public String getIngredient_name() {
