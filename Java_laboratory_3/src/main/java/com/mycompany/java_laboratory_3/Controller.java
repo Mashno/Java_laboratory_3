@@ -12,6 +12,13 @@ import Handler.*;
  */
 public class Controller {
     //private GroupOfMonster monsters;
+    private ExportingFiles exporterFiles;
+    
+    public Controller(){
+        new View(this).setVisible(true);
+        this.exporterFiles = new ExportingFiles();
+    }
+    
     public void ImportFile(File file){
         Handler xmlHandler =  new XMLHandler();
         Handler yamlHandler =  new YAMLHandler();
@@ -23,7 +30,16 @@ public class Controller {
         xmlHandler.handle(file);
     }
     
-    public Controller(){
-        new View(this).setVisible(true);
+    public void ExportFileXML(File file){
+        exporterFiles.ExportXML();
     }
+    
+    public void ExportFileYAML(File file){
+        exporterFiles.ExportYAML();
+    }
+    
+    public void ExportFileJSON(File file){
+        exporterFiles.ExportJSON();
+    }
+    
 }

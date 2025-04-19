@@ -153,31 +153,31 @@ public class View extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         fileChooser = new JFileChooser(new File("C:\\Users\\Владислав\\Desktop\\код на гитхаб\\Java_laboratory_3"));
-    int result = fileChooser.showOpenDialog(null);
-    
-    if (result == JFileChooser.APPROVE_OPTION) {
-        selectedFile = fileChooser.getSelectedFile();  // Сначала получаем файл!
-        String fileName = selectedFile.getName().toLowerCase();  // Затем его имя
-        
-        if (fileName.endsWith(".json") || fileName.endsWith(".yaml") || fileName.endsWith(".yml") || fileName.endsWith(".xml")) {
-            try {
-                controller.ImportFile(selectedFile);
-            } catch (Exception e) {
+        int result = fileChooser.showOpenDialog(null);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            selectedFile = fileChooser.getSelectedFile();  
+            String fileName = selectedFile.getName().toLowerCase();  
+
+            if (fileName.endsWith(".json") || fileName.endsWith(".yaml") || fileName.endsWith(".yml") || fileName.endsWith(".xml")) {
+                try {
+                    controller.ImportFile(selectedFile);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(
+                        null,
+                        "Ошибка при загрузке файла: " + e.getMessage(),
+                        "Ошибка",
+                        JOptionPane.ERROR_MESSAGE
+                    ); 
+                }
+            } else {
                 JOptionPane.showMessageDialog(
-                    null,
-                    "Ошибка при загрузке файла: " + e.getMessage(),
-                    "Ошибка",
+                    null,"Ошибка: выбранный файл должен быть в формате JSON, YAML или XML.",
+                    "Неверный формат файла",
                     JOptionPane.ERROR_MESSAGE
-                ); 
+                );
             }
-        } else {
-            JOptionPane.showMessageDialog(
-                null,"Ошибка: выбранный файл должен быть в формате JSON, YAML или XML.",
-                "Неверный формат файла",
-                JOptionPane.ERROR_MESSAGE
-            );
         }
-    }
     }//GEN-LAST:event_jButton5ActionPerformed
 
   
