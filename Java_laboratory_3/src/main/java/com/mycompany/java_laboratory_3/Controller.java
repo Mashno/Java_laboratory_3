@@ -7,92 +7,103 @@ package com.mycompany.java_laboratory_3;
 import java.io.File;
 import Handler.*;
 import Monsters.GroupOfMonsters;
-import Monsters.Ingredients;
 import Monsters.Monster;
-import Monsters.Recipe;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-/**
- *
- * @author Владислав
- */
+
 public class Controller {
     private GroupOfMonsters monsters;
     private ExportingFiles exporterFiles;
     private ArrayList<Monster> monsterList;
     private final View view;
-    
-    public Controller(){
+
+    public Controller() {
         this.monsters = new GroupOfMonsters();
         this.view = new View(this, monsters);
         this.view.setVisible(true);
         this.exporterFiles = new ExportingFiles();
         this.monsterList = new ArrayList<>();
-        
     }
-    
-    public void ImportFile(File file){
+
+    public void ImportFile(File file) {
         System.out.println("Текущая кодировка системы: " + System.getProperty("file.encoding"));
-        Handler xmlHandler =  new XMLHandler();
-        Handler yamlHandler =  new YAMLHandler();
-        Handler jsonHandler =  new JSONHandler();
-        
+        Handler xmlHandler = new XMLHandler();
+        Handler yamlHandler = new YAMLHandler();
+        Handler jsonHandler = new JSONHandler();
+
         xmlHandler.setNext(yamlHandler);
         yamlHandler.setNext(jsonHandler);
 
         monsterList.clear();
         xmlHandler.handle(file, monsterList);
-        //получили список - добавили его в группу списков и отчистили
+
         if (monsterList.isEmpty()) {
-            JOptionPane.showMessageDialog(view, 
-                "Не удалось загрузить данные из файла.\nПроверьте формат и содержимое файла.",
-                "Ошибка загрузки",
-                JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(view,
+                    "Не удалось загрузить данные из файла.\nПроверьте формат и содержимое файла.",
+                    "Ошибка загрузки",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
-        switch(monsterList.get(0).getType()){
+
+        String type = monsterList.get(0).getType(); // Может быть "xml", "yaml" или "json"
+        switch (type) {
             case "xml":
-                HashMap<String,ArrayList<Monster>> monsterHashMap = new HashMap<>();
-                monsterHashMap.put("xml",monsterList );
-                monsters.setXml_monsters(monsterHashMap);
+                monsters.setXml_monsters(groupByType(monsterList));
                 break;
             case "yaml":
+                monsters.setYaml_monsters(groupByType(monsterList));
                 break;
             case "json":
+                monsters.setJson_monsters(groupByType(monsterList));
                 break;
+            default:
+                JOptionPane.showMessageDialog(view,
+                        "Неизвестный тип файла: " + type,
+                        "Ошибка импорта",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
         }
+
         SwingUtilities.invokeLater(() -> {
-            view.initTree();
-            view.clearInfoPanel();// Перестраиваем дерево с новыми данными
+            view.initTree(null); // Сбрасываем выбор
+            view.clearInfoPanel();
         });
     }
-    
-    public void ExportFileXML(File file){
+
+    private HashMap<String, ArrayList<Monster>> groupByType(ArrayList<Monster> list) {
+        HashMap<String, ArrayList<Monster>> grouped = new HashMap<>();
+        String type = list.get(0).getType();
+        grouped.put(type, new ArrayList<>(list));
+        return grouped;
+    }
+
+    public void ExportFileXML(File file) {
         exporterFiles.ExportXML(file);
     }
-    
-    public void ExportFileYAML(File file){
+
+    public void ExportFileYAML(File file) {
         exporterFiles.ExportYAML(file);
     }
-    
-    public void ExportFileJSON(File file){
+
+    public void ExportFileJSON(File file) {
         exporterFiles.ExportJSON(file);
     }
-    
+
     public void updateMonsterDanger(Monster monster, int newDanger) {
+        if (monster == null) return;
+
+        System.out.println("Updating danger for monster: " + monster.getName());
         monster.setDanger(newDanger);
-        
-        // Обновляем дерево
+
         SwingUtilities.invokeLater(() -> {
-            view.initTree();
+            view.initTree(monster);  // Передаём объект монстра
         });
-        
-        JOptionPane.showMessageDialog(view, 
-            "Danger level updated successfully!", 
-            "Success", 
-            JOptionPane.INFORMATION_MESSAGE);
+
+        JOptionPane.showMessageDialog(view,
+                "Уровень опасности успешно обновлён!",
+                "Успех",
+                JOptionPane.INFORMATION_MESSAGE);
     }
-    
 }
