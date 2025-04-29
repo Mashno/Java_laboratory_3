@@ -4,10 +4,22 @@
  */
 package com.mycompany.java_laboratory_3;
 
+import java.io.File;
+
 /**
  *
  * @author Владислав
  */
 public class ExportingFiles {
+    public void ExportXML(File file){
+        
+    }
     
+    public void ExportYAML(File file){
+        
+    }
+    
+    public void ExportJSON(File file){
+        
+    }
 }

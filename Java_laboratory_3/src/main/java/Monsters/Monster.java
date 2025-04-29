@@ -170,4 +170,8 @@ public class Monster {
             this.immunities.add(immunity);
         }
     }
+    @Override
+    public String toString() {
+        return this.name; // Будет отображать имя монстра вместо стандартного представления
+    }
 }
