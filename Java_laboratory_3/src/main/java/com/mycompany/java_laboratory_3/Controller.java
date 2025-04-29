@@ -94,7 +94,6 @@ public class Controller {
     public void updateMonsterDanger(Monster monster, int newDanger) {
         if (monster == null) return;
 
-        System.out.println("Updating danger for monster: " + monster.getName());
         monster.setDanger(newDanger);
 
         SwingUtilities.invokeLater(() -> {

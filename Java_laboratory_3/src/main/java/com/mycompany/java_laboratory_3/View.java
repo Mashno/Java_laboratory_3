@@ -209,10 +209,7 @@ public class View extends JFrame {
         }
     }
 
-    private void addMonstersToTreeNode(HashMap<String, ArrayList<Monster>> monstersMap,
-                                       DefaultMutableTreeNode parentNode,
-                                       Monster selectedMonsterToSelect,
-                                       String type) {
+    private void addMonstersToTreeNode(HashMap<String, ArrayList<Monster>> monstersMap, DefaultMutableTreeNode parentNode,Monster selectedMonsterToSelect,String type) {
         if (monstersMap == null) return;
         for (ArrayList<Monster> list : monstersMap.values()) {
             for (Monster monster : list) {
