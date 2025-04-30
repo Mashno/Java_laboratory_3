@@ -8,10 +8,12 @@ import java.io.File;
 import Handler.*;
 import Monsters.GroupOfMonsters;
 import Monsters.Monster;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.xml.stream.XMLStreamException;
 
 public class Controller {
     private GroupOfMonsters monsters;
@@ -80,7 +82,12 @@ public class Controller {
     }
 
     public void ExportFileXML(File file) {
-        exporterFiles.ExportXML(file);
+        try{
+            exporterFiles.ExportXML(monsters.getXml_monsters().get("xml"), file);
+        }catch(XMLStreamException|IOException e){
+            e.printStackTrace();
+        }
+        
     }
 
     public void ExportFileYAML(File file) {
