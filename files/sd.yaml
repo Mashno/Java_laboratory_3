@@ -1,0 +1,202 @@
+!!com.mycompany.java_laboratory_3.ExportingFiles$YamlDataWrapper
+monsters:
+- active_time: ночью
+  danger: 7
+  describtion: Гибрид человека и лесного духа, охраняющий древние рощи.
+  effectiveness: умеренная
+  first_mentioned: '1234-06-21'
+  habitat: чащи Брокилона, Эдингеля
+  height: '3'
+  immunities: [оглушение, яды]
+  name: Леший
+  preparation_time: 60
+  recipe:
+    ingredients:
+    - {amount_ingredient: 3, ingredient_name: корень мандрагоры}
+    - {amount_ingredient: 1, ingredient_name: пепел драконида}
+    - {amount_ingredient: 0, ingredient_name: эссенция полыни}
+    type: яд
+  resistances: магия
+  type: yaml
+  vulnerabilities: null
+  weight: '300'
+- active_time: днём
+  danger: 5
+  describtion: Призрак, терроризирующий поля во время жатвы.
+  effectiveness: высокая
+  first_mentioned: '1198-07-15'
+  habitat: поля Редании, амбары Туссента
+  height: null
+  immunities: [кровотечение]
+  name: Полуденница
+  preparation_time: 30
+  recipe:
+    ingredients:
+    - {amount_ingredient: 2, ingredient_name: лепестки лунного цветка}
+    - {amount_ingredient: 1, ingredient_name: серебряная нить}
+    - {amount_ingredient: 0, ingredient_name: экстракт чеснока}
+    type: масло
+  resistances: null
+  type: yaml
+  vulnerabilities: световая магия
+  weight: неосязаем
+- active_time: в сумерках
+  danger: 9
+  describtion: Крылатый демон с хвостом скорпиона.
+  effectiveness: критическая
+  first_mentioned: '1150-04-12'
+  habitat: горные пещеры Туссента
+  height: '2'
+  immunities: []
+  name: Катакан
+  preparation_time: 90
+  recipe:
+    ingredients:
+    - {amount_ingredient: 4, ingredient_name: жало мантикоры}
+    - {amount_ingredient: 2, ingredient_name: нефритовая пыль}
+    - {amount_ingredient: 0, ingredient_name: спирт Альберихта}
+    type: масло
+  resistances: огонь, яды
+  type: yaml
+  vulnerabilities: null
+  weight: '200'
+- active_time: в туманную погоду
+  danger: 6
+  describtion: Болотная нежить из гниющих останков.
+  effectiveness: средняя
+  first_mentioned: '1221-09-03'
+  habitat: топи Вендена
+  height: '1.7'
+  immunities: [яды, удушье]
+  name: Кикимора
+  preparation_time: 45
+  recipe:
+    ingredients:
+    - {amount_ingredient: 3, ingredient_name: болотный газ}
+    - {amount_ingredient: 1, ingredient_name: язык утопленника}
+    - {amount_ingredient: 0, ingredient_name: серная кислота}
+    type: яд
+  resistances: null
+  type: yaml
+  vulnerabilities: земляная магия
+  weight: '70'
+- active_time: всегда
+  danger: 10
+  describtion: Дух вечной зимы.
+  effectiveness: переменная
+  first_mentioned: '1105-12-01'
+  habitat: ледники Ковира
+  height: '5'
+  immunities: []
+  name: Элементаль льда
+  preparation_time: 120
+  recipe:
+    ingredients:
+    - {amount_ingredient: 1, ingredient_name: сердце огненного элементаля}
+    - {amount_ingredient: 3, ingredient_name: сера}
+    - {amount_ingredient: 0, ingredient_name: расплавленное железо}
+    type: яд
+  resistances: заморозка, дробление
+  type: yaml
+  vulnerabilities: null
+  weight: не измерим
+- active_time: в полной темноте
+  danger: 8
+  describtion: Тень, пожирающая свет и звук, оставляющая после себя безмолвную тьму.
+  effectiveness: высокая
+  first_mentioned: '1176-11-30'
+  habitat: руины Доль Блатанны, подземелья Махакама
+  height: бесформенный (до 4 м)
+  immunities: [физические атаки, иллюзии]
+  name: Тенегрыз
+  preparation_time: 75
+  recipe:
+    ingredients:
+    - {amount_ingredient: 2, ingredient_name: пепел феникса}
+    - {amount_ingredient: 1, ingredient_name: черный жемчуг}
+    - {amount_ingredient: 0, ingredient_name: святая вода}
+    type: масло
+  resistances: null
+  type: yaml
+  vulnerabilities: священные символы
+  weight: неосязаем
+- active_time: днём и ночью (сильнее в полдень)
+  danger: 7
+  describtion: Дух самовозгорающегося пламени, принимающий форму человека.
+  effectiveness: умеренная
+  first_mentioned: '1203-03-14'
+  habitat: кузницы Виковаро, пожарища Ангрена
+  height: '2.5'
+  immunities: [огонь, ожоги]
+  name: Огневик
+  preparation_time: 50
+  recipe:
+    ingredients:
+    - {amount_ingredient: 4, ingredient_name: леденика}
+    - {amount_ingredient: 2, ingredient_name: жабья печень}
+    - {amount_ingredient: 0, ingredient_name: морская соль}
+    type: яд
+  resistances: null
+  type: yaml
+  vulnerabilities: водная магия
+  weight: 50 (ядро из раскаленного угля)
+- active_time: ночью
+  danger: 6
+  describtion: Скелет-мутант, сращенный с железом и камнем.
+  effectiveness: средняя
+  first_mentioned: '1255-08-22'
+  habitat: кладбища Назаира, шахты Каэдвена
+  height: '2.2'
+  immunities: [колющие атаки, страх]
+  name: Костолом
+  preparation_time: 40
+  recipe:
+    ingredients:
+    - {amount_ingredient: 3, ingredient_name: ржавые гвозди}
+    - {amount_ingredient: 1, ingredient_name: кость великана}
+    - {amount_ingredient: 0, ingredient_name: масло чёрного тмина}
+    type: масло
+  resistances: null
+  type: yaml
+  vulnerabilities: дробящее оружие
+  weight: '180'
+- active_time: в туманную погоду
+  danger: 5
+  describtion: Трупоподобное существо, заманивающее жертв голосами умерших.
+  effectiveness: низкая
+  first_mentioned: '1189-10-11'
+  habitat: трясины Вердена, болота Темерии
+  height: '1.7'
+  immunities: [яды, удушье]
+  name: Болотный Шептун
+  preparation_time: 35
+  recipe:
+    ingredients:
+    - {amount_ingredient: 3, ingredient_name: болотный газ}
+    - {amount_ingredient: 1, ingredient_name: язык утопленника}
+    - {amount_ingredient: 0, ingredient_name: серная кислота}
+    type: яд
+  resistances: null
+  type: yaml
+  vulnerabilities: огонь
+  weight: '70'
+- active_time: во время грозы
+  danger: 9
+  describtion: Воин-некромант, в которого ударила молния, превратив в ходячий разряд.
+  effectiveness: критическая
+  first_mentioned: '1132-05-07'
+  habitat: затерянные корабли Скеллиге, грозовые пещеры Керака
+  height: '2.8'
+  immunities: [электричество, молнии]
+  name: Грозовой Драугр
+  preparation_time: 100
+  recipe:
+    ingredients:
+    - {amount_ingredient: 5, ingredient_name: громовой камень}
+    - {amount_ingredient: 2, ingredient_name: перо гарпии}
+    - {amount_ingredient: 0, ingredient_name: ртуть}
+    type: масло
+  resistances: null
+  type: yaml
+  vulnerabilities: заземляющие атаки
+  weight: '250'

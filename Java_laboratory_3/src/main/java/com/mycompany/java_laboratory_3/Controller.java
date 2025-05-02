@@ -90,12 +90,14 @@ public class Controller {
         
     }
 
-    public void ExportFileYAML(File file) {
-        exporterFiles.ExportYAML(file);
+    public void ExportFileYAML(File file) throws IOException {
+        
+            exporterFiles.ExportYAML(monsters.getYaml_monsters().get("yaml"), file);
+        
     }
 
     public void ExportFileJSON(File file) {
-        exporterFiles.ExportJSON(file);
+        exporterFiles.ExportJSON(monsters.getJson_monsters().get("json"), file);
     }
 
     public void updateMonsterDanger(Monster monster, int newDanger) {
