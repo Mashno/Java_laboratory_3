@@ -1,0 +1,245 @@
+monsters:
+  - name: "Леший"
+    description: "Гибрид человека и лесного духа, охраняющий древние рощи."
+    danger: 7
+    habitat: "чащи Брокилона, Эдингеля"
+    first_mentioned: "1234-06-21"
+    vulnerabilities: null
+    resistances: "магия"
+    height: 3
+    weight: 300
+    immunities:
+      - "оглушение"
+      - "яды"
+    active_time: "ночью"
+    recipe:
+      type: "яд"
+      ingredients:
+        - name: "корень мандрагоры"
+          amount: 3
+        - name: "пепел драконида"
+          amount: 1
+        - name: "эссенция полыни"
+          amount: null
+    preparation_time: 60
+    effectiveness: "умеренная"
+
+  - name: "Полуденница"
+    description: "Призрак, терроризирующий поля во время жатвы."
+    danger: 5
+    habitat: "поля Редании, амбары Туссента"
+    first_mentioned: "1198-07-15"
+    vulnerabilities: "световая магия"
+    resistances: null
+    height: null
+    weight: "неосязаем"
+    immunities:
+      - "кровотечение"
+    active_time: "днём"
+    recipe:
+      type: "масло"
+      ingredients:
+        - name: "лепестки лунного цветка"
+          amount: 2
+        - name: "серебряная нить"
+          amount: 1
+        - name: "экстракт чеснока"
+          amount: null
+    preparation_time: 30
+    effectiveness: "высокая"
+
+  - name: "Катакан"
+    description: "Крылатый демон с хвостом скорпиона."
+    danger: 9
+    habitat: "горные пещеры Туссента"
+    first_mentioned: "1150-04-12"
+    vulnerabilities: null
+    resistances: "огонь, яды"
+    height: 2
+    weight: 200
+    immunities: null
+    active_time: "в сумерках"
+    recipe:
+      type: "масло"
+      ingredients:
+        - name: "жало мантикоры"
+          amount: 4
+        - name: "нефритовая пыль"
+          amount: 2
+        - name: "спирт Альберихта"
+          amount: null
+    preparation_time: 90
+    effectiveness: "критическая"
+
+  - name: "Кикимора"
+    description: "Болотная нежить из гниющих останков."
+    danger: 6
+    habitat: "топи Вендена"
+    first_mentioned: "1221-09-03"
+    vulnerabilities: "земляная магия"
+    resistances: null
+    height: 1.7
+    weight: 70
+    immunities:
+      - "яды"
+      - "удушье"
+    active_time: "в туманную погоду"
+    recipe:
+      type: "яд"
+      ingredients:
+        - name: "болотный газ"
+          amount: 3
+        - name: "язык утопленника"
+          amount: 1
+        - name: "серная кислота"
+          amount: null
+    preparation_time: 45
+    effectiveness: "средняя"
+
+  - name: "Элементаль льда"
+    description: "Дух вечной зимы."
+    danger: 10
+    habitat: "ледники Ковира"
+    first_mentioned: "1105-12-01"
+    vulnerabilities: null
+    resistances: "заморозка, дробление"
+    height: 5
+    weight: "не измерим"
+    immunities: null
+    active_time: "всегда"
+    recipe:
+      type: "яд"
+      ingredients:
+        - name: "сердце огненного элементаля"
+          amount: 1
+        - name: "сера"
+          amount: 3
+        - name: "расплавленное железо"
+          amount: null
+    preparation_time: 120
+    effectiveness: "переменная"
+
+  - name: "Тенегрыз"
+    description: "Тень, пожирающая свет и звук, оставляющая после себя безмолвную тьму."
+    danger: 8
+    habitat: "руины Доль Блатанны, подземелья Махакама"
+    first_mentioned: "1176-11-30"
+    vulnerabilities: "священные символы"
+    resistances: null
+    height: "бесформенный (до 4 м)"
+    weight: "неосязаем"
+    immunities:
+      - "физические атаки"
+      - "иллюзии"
+    active_time: "в полной темноте"
+    recipe:
+      type: "масло"
+      ingredients:
+        - name: "пепел феникса"
+          amount: 2
+        - name: "черный жемчуг"
+          amount: 1
+        - name: "святая вода"
+          amount: null
+    preparation_time: 75
+    effectiveness: "высокая"
+
+  - name: "Огневик"
+    description: "Дух самовозгорающегося пламени, принимающий форму человека."
+    danger: 7
+    habitat: "кузницы Виковаро, пожарища Ангрена"
+    first_mentioned: "1203-03-14"
+    vulnerabilities: "водная магия"
+    resistances: null
+    height: 2.5
+    weight: "50 (ядро из раскаленного угля)"
+    immunities:
+      - "огонь"
+      - "ожоги"
+    active_time: "днём и ночью (сильнее в полдень)"
+    recipe:
+      type: "яд"
+      ingredients:
+        - name: "леденика"
+          amount: 4
+        - name: "жабья печень"
+          amount: 2
+        - name: "морская соль"
+          amount: null
+    preparation_time: 50
+    effectiveness: "умеренная"
+
+  - name: "Костолом"
+    description: "Скелет-мутант, сращенный с железом и камнем."
+    danger: 6
+    habitat: "кладбища Назаира, шахты Каэдвена"
+    first_mentioned: "1255-08-22"
+    vulnerabilities: "дробящее оружие"
+    resistances: null
+    height: 2.2
+    weight: 180
+    immunities:
+      - "колющие атаки"
+      - "страх"
+    active_time: "ночью"
+    recipe:
+      type: "масло"
+      ingredients:
+        - name: "ржавые гвозди"
+          amount: 3
+        - name: "кость великана"
+          amount: 1
+        - name: "масло чёрного тмина"
+          amount: null
+    preparation_time: 40
+    effectiveness: "средняя"
+
+  - name: "Болотный Шептун"
+    description: "Трупоподобное существо, заманивающее жертв голосами умерших."
+    danger: 5
+    habitat: "трясины Вердена, болота Темерии"
+    first_mentioned: "1189-10-11"
+    vulnerabilities: "огонь"
+    resistances: null
+    height: 1.7
+    weight: 70
+    immunities:
+      - "яды"
+      - "удушье"
+    active_time: "в туманную погоду"
+    recipe:
+      type: "яд"
+      ingredients:
+        - name: "болотный газ"
+          amount: 3
+        - name: "язык утопленника"
+          amount: 1
+        - name: "серная кислота"
+          amount: null
+    preparation_time: 35
+    effectiveness: "низкая"
+
+  - name: "Грозовой Драугр"
+    description: "Воин-некромант, в которого ударила молния, превратив в ходячий разряд."
+    danger: 9
+    habitat: "затерянные корабли Скеллиге, грозовые пещеры Керака"
+    first_mentioned: "1132-05-07"
+    vulnerabilities: "заземляющие атаки"
+    resistances: null
+    height: 2.8
+    weight: 250
+    immunities:
+      - "электричество"
+      - "молнии"
+    active_time: "во время грозы"
+    recipe:
+      type: "масло"
+      ingredients:
+        - name: "громовой камень"
+          amount: 5
+        - name: "перо гарпии"
+          amount: 2
+        - name: "ртуть"
+          amount: null
+    preparation_time: 100
+    effectiveness: "критическая"

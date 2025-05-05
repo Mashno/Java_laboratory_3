@@ -77,7 +77,7 @@ public class View extends JFrame {
 
         JButton importButton = new JButton("Import File");
         importButton.addActionListener(e -> {
-            JFileChooser fileChooser = new JFileChooser(new File("C:\\Users\\Владислав\\Desktop\\код на гитхаб\\Java_laboratory_3"));
+            JFileChooser fileChooser = new JFileChooser(new File("files"));
             int returnValue = fileChooser.showOpenDialog(null);
             if (returnValue == JFileChooser.APPROVE_OPTION) {
                 controller.ImportFile(fileChooser.getSelectedFile());
