@@ -27,13 +27,13 @@ public class JSONHandler extends BaseHandler{
                 for (Map m : data.get("monsters")) {
                     Monster monster = new Monster();
                     monster.setType("json");
-                    // Основные свойства
+                    
                     setProperties(monster, m);
-                    // Иммунитеты
+                    
                     if (m.get("immunities") != null) {
                         ((List<String>)m.get("immunities")).forEach(monster::addImmunity);
                     }
-                    // Рецепт
+                    
                     if (m.get("recipe") != null) {
                         monster.setRecipe(createRecipe((Map)m.get("recipe")));
                     }
