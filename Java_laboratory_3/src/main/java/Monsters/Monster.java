@@ -149,20 +149,6 @@ public class Monster {
 
     public Monster() {
         
-//        this.name = name;
-//        this.describtion = describtion;
-//        this.danger = danger;
-//        this.habitat = habitat;
-//        this.first_mentioned = first_mentioned;
-//        this.vulnerabilities = vulnerabilities;
-//        this.resistances = resistances;
-//        this.height = height;
-//        this.weight = weight;
-//        this.immunities = immunities;
-//        this.active_time = active_time;
-//        this.recipe = recipe;
-//        this.preparation_time = preparation_time;
-//        this.effectiveness = effectiveness;
     }
     
     public void addImmunity(String immunity){
@@ -172,6 +158,6 @@ public class Monster {
     }
     @Override
     public String toString() {
-        return this.name; // Будет отображать имя монстра вместо стандартного представления
+        return this.name; 
     }
 }

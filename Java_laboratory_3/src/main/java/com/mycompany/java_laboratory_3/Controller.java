@@ -49,7 +49,7 @@ public class Controller {
             return;
         }
 
-        String type = monsterList.get(0).getType(); // Может быть "xml", "yaml" или "json"
+        String type = monsterList.get(0).getType();
         switch (type) {
             case "xml":
                 monsters.setXml_monsters(groupByType(monsterList));
@@ -69,7 +69,7 @@ public class Controller {
         }
 
         SwingUtilities.invokeLater(() -> {
-            view.initTree(null); // Сбрасываем выбор
+            view.initTree(null); 
             view.clearInfoPanel();
         });
     }
@@ -106,7 +106,7 @@ public class Controller {
         monster.setDanger(newDanger);
 
         SwingUtilities.invokeLater(() -> {
-            view.initTree(monster);  // Передаём объект монстра
+            view.initTree(monster); 
         });
 
         JOptionPane.showMessageDialog(view,

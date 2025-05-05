@@ -42,13 +42,13 @@ public class ExportingFiles {
             
             try {
                 writer.writeStartDocument("UTF-8", "1.0");
-                writer.writeStartElement("monsters"); // Корневой элемент
+                writer.writeStartElement("monsters"); 
                 
                 for (Monster monster : monsters) {
                     writeMonsterElement(writer, monster);
                 }
                 
-                writer.writeEndElement(); // Закрываем <monsters>
+                writer.writeEndElement(); 
                 writer.writeEndDocument();
                 
             } finally {
@@ -62,12 +62,12 @@ public class ExportingFiles {
         
         writer.writeStartElement("monster");
         
-        // Основные атрибуты
+        
         writeElement(writer, "name", monster.getName());
         writeElement(writer, "description", monster.getDescribtion());
         writeElement(writer, "danger", String.valueOf(monster.getDanger()));
         
-        // Дополнительные поля
+        
         writeElement(writer, "habitat", monster.getHabitat());
         writeElement(writer, "first_mentioned", monster.getFirst_mentioned());
         writeElement(writer, "vulnerabilities", monster.getVulnerabilities());
@@ -78,7 +78,7 @@ public class ExportingFiles {
         writeElement(writer, "preparation_time", String.valueOf(monster.getPreparation_time()));
         writeElement(writer, "effectiveness", monster.getEffectiveness());
         
-        // Иммунитеты
+        
         if (!monster.getImmunities().isEmpty()) {
             writer.writeStartElement("immunities");
             for (String immunity : monster.getImmunities()) {
@@ -87,12 +87,12 @@ public class ExportingFiles {
             writer.writeEndElement();
         }
         
-        // Рецепт
+       
         if (monster.getRecipe() != null) {
             writeRecipeElement(writer, monster.getRecipe());
         }
         
-        writer.writeEndElement(); // Закрываем <monster>
+        writer.writeEndElement(); 
     }
 
     private static void writeRecipeElement(XMLStreamWriter writer, Recipe recipe) 
@@ -105,7 +105,7 @@ public class ExportingFiles {
             writer.writeStartElement("ingredient");
             writer.writeAttribute("name", ingredient.getIngredient_name());
             
-            // Для amount используем "null" если значение 0 или отрицательное
+            
             String amount = (ingredient.getAmount_ingredient() <= 0) ? 
                           "null" : String.valueOf(ingredient.getAmount_ingredient());
             writer.writeAttribute("amount", amount);
@@ -135,7 +135,7 @@ public class ExportingFiles {
         Yaml yaml = new Yaml(options);
         
         try (FileWriter writer = new FileWriter(file)) {
-            // Создаем структуру данных для YAML
+            
             Map<String, Object> yamlData = new LinkedHashMap<>();
             ArrayList<Map<String, Object>> monstersList = new ArrayList<>();
             
@@ -192,16 +192,15 @@ public class ExportingFiles {
     public void ExportJSON(ArrayList<Monster> monsters, File file) {
         try {
             ObjectMapper mapper = new ObjectMapper();
-            mapper.enable(SerializationFeature.INDENT_OUTPUT); // Красивый формат с отступами
-
-            // Создаем структуру данных для экспорта
+            mapper.enable(SerializationFeature.INDENT_OUTPUT); 
+            
             Map<String, List<Map<String, Object>>> exportData = new HashMap<>();
             List<Map<String, Object>> monstersList = new ArrayList<>();
 
             for (Monster monster : monsters) {
                 Map<String, Object> monsterMap = new LinkedHashMap<>();
 
-                // Основные свойства
+                
                 monsterMap.put("name", monster.getName());
                 monsterMap.put("description", monster.getDescribtion());
                 monsterMap.put("danger", monster.getDanger());
@@ -212,7 +211,7 @@ public class ExportingFiles {
                 monsterMap.put("height", monster.getHeight());
                 monsterMap.put("weight", monster.getWeight());
 
-                // Иммунитеты
+             
                 if (monster.getImmunities() != null && !monster.getImmunities().isEmpty()) {
                     monsterMap.put("immunities", new ArrayList<>(monster.getImmunities()));
                 } else {
@@ -246,7 +245,7 @@ public class ExportingFiles {
 
             exportData.put("monsters", monstersList);
 
-            // Записываем в файл
+            
             mapper.writeValue(file, exportData);
 
         } catch (IOException e) {

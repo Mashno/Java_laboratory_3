@@ -26,7 +26,7 @@ public class YAMLHandler extends BaseHandler{
             Yaml yaml = new Yaml();
 
         try (FileInputStream inputStream = new FileInputStream(request)) {
-            // Загружаем корневой объект (Map), где есть ключ "monsters"
+            
             Map<String, Object> root = yaml.load(inputStream);
 
             if (root != null && root.containsKey("monsters")) {
@@ -55,13 +55,13 @@ public class YAMLHandler extends BaseHandler{
         try {
             Monster monster = new Monster();
 
-            // Устанавливаем основные свойства
-            monster.setType("yaml");  // может быть null
+           
+            monster.setType("yaml");  
             monster.setName(getStringValue(data, "name"));
-            monster.setDescribtion(getStringValue(data, "description"));  // обрати внимание на правильное название поля!
+            monster.setDescribtion(getStringValue(data, "description"));  
             monster.setDanger(getIntValue(data, "danger"));
 
-            // Обработка списков
+            
             monster.setHabitat(getStringValue(data, "habitat"));
             monster.setVulnerabilities(getStringValue(data, "vulnerabilities"));
             monster.setResistances(getStringValue(data, "resistances"));
@@ -75,7 +75,7 @@ public class YAMLHandler extends BaseHandler{
             }
             
 
-            // Остальные поля
+           
             monster.setHeight(getStringValue(data, "height"));
             monster.setWeight(getStringValue(data, "weight"));
             monster.setFirst_mentioned(getStringValue(data, "first_mentioned"));
@@ -109,7 +109,7 @@ public class YAMLHandler extends BaseHandler{
         }
     }
 
-    // Вспомогательные методы
+
 
     private String getStringValue(Map<String, Object> map, String key) {
         Object value = map.get(key);
@@ -121,7 +121,7 @@ public class YAMLHandler extends BaseHandler{
         if (value instanceof Integer) {
             return (Integer) value;
         }
-        return 0; // или можно вернуть Optional<Integer>, если нужна точность
+        return 0; 
     }
 
     private List<String> getStringList(Map<String, Object> map, String key) {
